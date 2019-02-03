@@ -40,8 +40,8 @@ class OrderController extends Controller
     			$order->save();
     			break;
     	}
-    	dd($order);
-    	return response()->json($orders, 200);
+        $order = json_encode($order);
+    	return response()->json($order, 200);
     }
 
     public function payNow(Request $request) {
